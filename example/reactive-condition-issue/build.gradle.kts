@@ -5,5 +5,8 @@ plugins {
 
 dependencies {
     implementation("com.linecorp.armeria:armeria-spring-boot3-starter")
-    // implementation("org.springframework.boot:spring-boot-starter")
+    implementation("com.linecorp.armeria:armeria-spring-boot3-actuator-starter")
+
+    implementation("org.springframework:spring-webflux")
+    implementation("io.projectreactor.netty:reactor-netty")
 }
