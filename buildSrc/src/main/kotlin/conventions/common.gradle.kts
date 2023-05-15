@@ -19,8 +19,6 @@ val libs = the<org.gradle.accessors.dm.LibrariesForLibs>()
 
 dependencies {
     implementation(platform(libs.armeria.bom))
-    implementation(platform(libs.grpc.bom))
-    implementation(platform(libs.protobuf.bom))
     implementation(platform(libs.spring.boot.bom))
 
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")

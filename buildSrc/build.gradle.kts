@@ -3,7 +3,6 @@ plugins {
 }
 
 dependencies {
-    implementation(libs.gradle.plugin.protobuf)
     implementation(libs.gradle.plugin.spring.boot)
 
     // Workaround for referencing org.gradle.accessors.dm.LibrariesForLibs in pre-compiled script

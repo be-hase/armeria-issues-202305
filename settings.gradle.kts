@@ -14,6 +14,5 @@ dependencyResolutionManagement {
 rootProject.name = "armeria-issues-202305"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
+include(":example:actuator-issue")
 include(":example:reactive-condition-issue")
-include(":example:tracing-issue")
-include(":protocol")
