@@ -1,2 +1,2 @@
 # workaround: Activating this setting will activate the armeria's auto configuration
-spring.main.web-application-type: none
+# spring.main.web-application-type: none
