@@ -1,0 +1,15 @@
+[versions]
+grpc-core = "1.55.1"
+protobuf = "3.23.0"
+spring-boot = "3.0.6"
+
+[libraries]
+armeria-bom = { module = "com.linecorp.armeria:armeria-bom", version = "1.23.1" }
+grpc-bom = { module = "io.grpc:grpc-bom", version.ref = "grpc-core" }
+protobuf-bom = { module = "com.google.protobuf:protobuf-bom", version.ref = "protobuf" }
+protobuf-kotlin = { module = "com.google.protobuf:protobuf-kotlin", version.ref = "protobuf" }
+spring-boot-bom = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "spring-boot" }
+
+# gradle plugins
+gradle-plugin-protobuf = { module = "com.google.protobuf:protobuf-gradle-plugin", version = "0.9.3" }
+gradle-plugin-spring-boot = { module = "org.springframework.boot:spring-boot-gradle-plugin", version.ref = "spring-boot" }
