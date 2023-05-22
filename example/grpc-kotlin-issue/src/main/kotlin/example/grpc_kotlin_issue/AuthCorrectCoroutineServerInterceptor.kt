@@ -1,12 +1,12 @@
 package example.grpc_kotlin_issue
 
 import com.linecorp.armeria.server.ServiceRequestContext
-import com.linecorp.armeria.server.grpc.CustomCoroutineServerInterceptor
+import com.linecorp.armeria.server.grpc.CorrectCoroutineServerInterceptor
 import io.grpc.*
 import kotlinx.coroutines.delay
 import org.slf4j.LoggerFactory
 
-class AuthCustomCoroutineServerInterceptor : CustomCoroutineServerInterceptor {
+class AuthCorrectCoroutineServerInterceptor : CorrectCoroutineServerInterceptor {
     override suspend fun <ReqT, RespT> suspendedInterceptCall(
         call: ServerCall<ReqT, RespT>,
         headers: Metadata,
@@ -51,6 +51,6 @@ class AuthCustomCoroutineServerInterceptor : CustomCoroutineServerInterceptor {
     }
 
     companion object {
-        private val log = LoggerFactory.getLogger(AuthCustomCoroutineServerInterceptor::class.java)
+        private val log = LoggerFactory.getLogger(AuthCorrectCoroutineServerInterceptor::class.java)
     }
 }

@@ -14,7 +14,7 @@ import kotlin.reflect.full.companionObject
 import kotlin.reflect.full.companionObjectInstance
 import kotlin.reflect.full.memberProperties
 
-interface CustomCoroutineServerInterceptor : AsyncServerInterceptor {
+interface CorrectCoroutineServerInterceptor : AsyncServerInterceptor {
     override fun <I : Any, O : Any> asyncInterceptCall(
         call: ServerCall<I, O>,
         headers: Metadata,
