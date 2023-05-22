@@ -33,6 +33,4 @@ dependencies {
     implementation(platform(libs.grpc.bom))
     implementation(platform(libs.protobuf.bom))
     implementation(platform(libs.spring.boot.bom))
-
-    annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
 }

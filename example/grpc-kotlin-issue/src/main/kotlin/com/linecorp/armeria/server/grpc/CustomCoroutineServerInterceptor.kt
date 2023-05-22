@@ -6,8 +6,7 @@ import io.grpc.ServerCall
 import io.grpc.ServerCallHandler
 import io.grpc.kotlin.CoroutineContextServerInterceptor
 import io.grpc.kotlin.GrpcContextElement
-import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.future.future
 import java.util.concurrent.CompletableFuture
 import kotlin.coroutines.CoroutineContext
@@ -16,16 +15,15 @@ import kotlin.reflect.full.companionObjectInstance
 import kotlin.reflect.full.memberProperties
 
 interface CustomCoroutineServerInterceptor : AsyncServerInterceptor {
-    @OptIn(DelicateCoroutinesApi::class)
     override fun <I : Any, O : Any> asyncInterceptCall(
         call: ServerCall<I, O>,
         headers: Metadata,
         next: ServerCallHandler<I, O>
     ): CompletableFuture<ServerCall.Listener<I>> {
-        return GlobalScope.future(
+        return CoroutineScope(
             COROUTINE_CONTEXT_KEY.get()
                     + GrpcContextElement.current()
-        ) {
+        ).future {
             suspendedInterceptCall(call, headers, next)
         }
     }

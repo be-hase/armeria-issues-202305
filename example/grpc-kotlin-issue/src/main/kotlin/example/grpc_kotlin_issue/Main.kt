@@ -39,9 +39,7 @@ fun configureServices(sb: ServerBuilder): ServerBuilder {
                     ServerInterceptors.interceptForward(
                         GreeterApi(),
                         listOf(
-                            RequestIdInterceptor(),
-                            CoroutineNameContextServerInterceptor(),
-                            AuthCustomCoroutineServerInterceptor(),
+                            AuthCoroutineServerInterceptor(),
                         )
                     ),
                 )

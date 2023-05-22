@@ -14,12 +14,8 @@ val CLIENT_MAP = mapOf(
     "client3Key" to "client3",
 )
 
-val REQUEST_ID_GRPC_CONTEXT_KEY: Context.Key<String> = Context.key("requestId")
-val REQUEST_ID_ARMERIA_CONTEXT_KEY: AttributeKey<String> = AttributeKey.valueOf("requestId")
-
 fun currentGrpcContext(): Map<String, Any> {
     return mapOf(
         "clientId" to CLIENT_ID_GRPC_CONTEXT_KEY.get(),
-        "requestId" to REQUEST_ID_GRPC_CONTEXT_KEY.get(),
     )
 }
