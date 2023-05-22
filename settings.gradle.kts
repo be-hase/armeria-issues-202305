@@ -16,3 +16,6 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 include(":example:actuator-issue")
 include(":example:reactive-condition-issue")
+include(":example:grpc-kotlin-issue")
+
+include(":protocol")
