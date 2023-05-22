@@ -21,7 +21,10 @@ interface CustomCoroutineServerInterceptor : AsyncServerInterceptor {
         next: ServerCallHandler<I, O>
     ): CompletableFuture<ServerCall.Listener<I>> {
         return CoroutineScope(
+            // It is necessary to write this to propagate the CoroutineContext set by the previous interceptor.
+            // (AThe ArmeriaRequestCoroutineContext is also propagated by this)
             COROUTINE_CONTEXT_KEY.get()
+                    // gRPC Context must also be propagated
                     + GrpcContextElement.current()
         ).future {
             suspendedInterceptCall(call, headers, next)
